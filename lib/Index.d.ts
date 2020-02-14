@@ -1,2 +1,3 @@
-import { PromiseEstimator, IPromiseEstimator, IEstimatorOptions } from './models/PromiseEstimator';
-export { IEstimatorOptions, IPromiseEstimator, PromiseEstimator };
+export { PromiseEstimator } from './models/PromiseEstimator';
+export { IPromiseEstimator } from './models/PromiseEstimator';
+export { IEstimatorOptions } from './models/PromiseEstimator';
