@@ -1,3 +1,6 @@
-export { PromiseEstimator } from './models/PromiseEstimator'
-export { IPromiseEstimator } from './models/PromiseEstimator'
-export { IEstimatorOptions } from './models/PromiseEstimator'
+import { PromiseEstimator } from './models/PromiseEstimator'
+
+export = {
+	promiseEstimator: new PromiseEstimator(),
+	PromiseEstimator: PromiseEstimator
+}

@@ -1,9 +1,9 @@
 {
 	"name": "dd-promise-estimator",
-	"version": "0.9.5",
+	"version": "0.9.6",
 	"description": "A Promise duration estimator with progress handler",
 	"main": "lib/index.js",
-	"types": "lib/index.d.ts",
+	"types": "types/index.d.ts",
 	"scripts": {
 		"test": "karma start",
 		"test:watch": "karma start --auto-watch=true --single-run=false",
