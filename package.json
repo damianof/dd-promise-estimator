@@ -1,5 +1,5 @@
 {
-	"name": "dd-promise-estimator",
+	"name": "@damianof/dd-promise-estimator",
 	"version": "0.9.8",
 	"description": "A Promise duration estimator with progress handler",
 	"main": "lib/index.js",
