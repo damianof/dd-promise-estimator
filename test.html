@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+  <head>
+    <title>PromiseEstimator Browser Test</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <style>
+      body {
+        font-family: 'Open Sans', serif;
+        font-size: 12px;
+      }
+    </style>
+    <script src="https://unpkg.com/underlog@0.9.7/lib/browser.min.js"></script>
+    <!--script src="https://unpkg.com/dd-promise-estimator@1.0.0/lib/browser.min.js"></script-->
+    <script src="./lib/browser.min.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+			// create Chrome transport
+      const chromeTransport = new Underlog.ChromeTransport({
+        level: 'error',
+        levelOnly: false,
+      });
+
+      // get target for HtmlTransport
+      const domElement = document.getElementById('htmlTransportTarget');
+      // create HtmlTransport
+      const htmlTransport = new Underlog.HtmlTransport({
+        level: 'error',
+        levelOnly: false,
+        domElement: domElement
+      });
+
+      // create logger with 2 transports: Chrome and Html
+      const logger = new Underlog.Logger({
+        transports: [
+          chromeTransport,
+          htmlTransport
+        ]
+      });
+
+			const promiseFactory = () => {
+				return new Promise((resolve) => {
+					const timeout = 3125
+					setTimeout(() => {
+						resolve(`myPromise is done in ${ timeout }`)
+					}, timeout)
+				})
+			}
+
+      // create estimator
+      const promiseEstimator = new PromiseEstimator();
+
+			const options = {
+				id: 'myPromise',
+				estimate: 5000, // initial guess, but will be adjusted by the estimator internal after the promise has competed with the actual execution time so next time will be more precise
+				interval: 1000,
+				intervalHandler: (current) => {
+					logger.info(`intervalHandler ${current}`, `estimates ${ promiseEstimator.estimates['myPromise'] }`)
+				}
+			};
+
+      promiseEstimator.work(promiseFactory(), options)
+			.then((response) => {
+				logger.info('estimator work 1st time response', response)
+				
+				promiseEstimator.work(promiseFactory(), options)
+					.then((response2) => {
+						logger.info('estimator work 2nd time response', response2)
+					})
+			})
+    });
+    </script>
+  </head>
+  <body>
+    <h1>PromiseEstimator Browser</h1>
+    <hr/>
+    <div id="htmlTransportTarget">
+    </div>
+  </body>
+</body>
+

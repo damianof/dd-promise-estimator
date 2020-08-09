@@ -1,5 +1,9 @@
 import { expect } from 'chai'
-import { IPromiseEstimator, PromiseEstimator, IEstimatorOptions } from '@/models/PromiseEstimator'
+import { 
+	IPromiseEstimator, 
+	PromiseEstimator, 
+	IEstimatorOptions 
+} from '../src'
 
 let promiseEstimator: IPromiseEstimator
 

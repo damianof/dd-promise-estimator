@@ -1,6 +1,4 @@
-import { PromiseEstimator } from './models/PromiseEstimator'
+import { PromiseEstimator } from './PromiseEstimator'
+export * from './PromiseEstimator'
+export default PromiseEstimator
 
-export = {
-	promiseEstimator: new PromiseEstimator(),
-	PromiseEstimator: PromiseEstimator
-}
