@@ -1,48 +1,48 @@
 {
-	"name": "dd-promise-estimator",
-	"version": "1.0.0",
-	"description": "A Promise duration estimator with progress handler",
-	"main": "lib/index.js",
-	"types": "lib/index.d.ts",
-	"scripts": {
-		"test": "TS_NODE_PROJECT='./tsconfig.tests.json' mocha -r ts-node/register tests/**/*.spec.ts",
-		"build-tests": "TS_NODE_PROJECT='./tsconfig.tests.json' tsc",
-		"build": "tsc --preserveSymlinks true; rollup -c",
-		"pretty": "prettier --write '**/*.{ts,js,json}'"
-	},
-	"dependencies": {},
-	"devDependencies": {
-		"@types/chai": "^4.2.12",
-		"@types/mocha": "^8.0.0",
-		"@types/node": "^13.7.0",
-		"chai": "^4.2.0",
-		"mocha": "^8.0.1",
-		"rollup": "^2.23.0",
-		"rollup-plugin-babel-minify": "^10.0.0",
-		"rollup-plugin-commonjs": "^10.1.0",
-		"rollup-plugin-node-resolve": "^5.2.0",
-		"tslib": "^2.0.1",
-		"ts-node": "^8.10.2",
-		"typescript": "^3.9.7"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/damianof/dd-promise-estimator.git"
-	},
-	"keywords": [
-		"promise",
-		"estimator",
-		"estimate",
-		"progress",
-		"execution"
-	],
-	"author": "Damiano Fusco",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/damianof/dd-promise-estimator/issues"
-	},
-	"homepage": "https://github.com/damianof/dd-promise-estimator#readme",
-	"publishConfig": {
-		"registry": "https://registry.npmjs.org/"
-	}
+  "name": "dd-promise-estimator",
+  "version": "1.0.0",
+  "description": "A Promise duration estimator with progress handler",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "TS_NODE_PROJECT='./tsconfig.tests.json' mocha -r ts-node/register tests/**/*.spec.ts",
+    "build-tests": "TS_NODE_PROJECT='./tsconfig.tests.json' tsc",
+    "build": "tsc --preserveSymlinks true; rollup -c",
+    "pretty": "prettier --write '**/*.{ts,js,json}'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/chai": "^4.2.12",
+    "@types/mocha": "^8.0.0",
+    "@types/node": "^13.7.0",
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "rollup": "^2.23.0",
+    "rollup-plugin-babel-minify": "^10.0.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "tslib": "^2.0.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damianof/dd-promise-estimator.git"
+  },
+  "keywords": [
+    "promise",
+    "estimator",
+    "estimate",
+    "progress",
+    "execution"
+  ],
+  "author": "Damiano Fusco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/damianof/dd-promise-estimator/issues"
+  },
+  "homepage": "https://github.com/damianof/dd-promise-estimator#readme",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
 }
